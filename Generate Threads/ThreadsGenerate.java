@@ -12,14 +12,17 @@ class square implements Runnable
     public void run()
     {
         System.out.println("Square of the number: "+(y*y));
-        //Use Threads to start a thread to find the cube of the given number y
+        cube(y);//Use Threads to start a thread to find the cube of the given number y
     }
 }
 
-class cube //Something missing in the code here related to interfaces
+class cube(int x) //Something missing in the code here related to interfaces
 {
     int y;
-    //Use a constructor to assign the value of y
+    public cube()
+    {
+        y=x;
+    }//Use a constructor to assign the value of y
     public void run()
     {
         System.out.println("Cube of the number: "+(y*y*y));
@@ -45,7 +48,7 @@ public class p3b
     {
         for(int i=0;i<5;i++)
         {
-            //Generate a number using Threads and start the given thread
+            Thread t2= new Thread(new square(i)); //Generate a number using Threads and start the given thread
         
         try{
             sleep(1000); //Find the error in this given line
