@@ -11,8 +11,15 @@ Example: given list -> [1,2,3,4,5]
 
 nums = [3, 5, 2, 9, 101, 333, 4]
 
-while len(nums):
-    for i in range(len(nums)):
-        if i%2==0:
-            del nums[i]
-    print(nums)
+def fn(l) :
+    for i in l:
+        if l.index(i)%2==0:
+            l[l.index(i)]=''
+    for i in l:
+        if i=='':
+            del l[l.index(i)]
+    print(l)
+    if l != [] :
+        fn(l)
+
+fn(nums)
